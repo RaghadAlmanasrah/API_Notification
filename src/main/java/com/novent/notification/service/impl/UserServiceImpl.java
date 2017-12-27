@@ -14,6 +14,7 @@ import com.novent.notification.entity.User;
 import com.novent.notification.service.UserService;
 import com.novent.notification.util.ResponseObject;
 import com.novent.notification.util.ResponseObjectAll;
+import com.novent.notification.util.ResponseObjectCrud;
 import com.novent.notification.util.SendNotifications;
 
 
@@ -32,7 +33,7 @@ public class UserServiceImpl implements UserService{
 			user.setType("user");
 			userDao.save(user);
 			SendNotifications.sendNotification(user.getId()+"", "Your account was successfully created", "Your account was successfully created");
-			response = new ResponseObject(ResponseStatus.SUCCESS_RESPONSE_STATUS, ResponseCode.SUCCESS_RESPONSE_CODE, ResponseMessage.SUCCESS_CREATING_MESSAGE);
+			response = new ResponseObjectCrud(ResponseStatus.SUCCESS_RESPONSE_STATUS, ResponseCode.SUCCESS_RESPONSE_CODE, ResponseMessage.SUCCESS_CREATING_MESSAGE, user.getId());
 		} else {
 			response = new ResponseObject(ResponseStatus.FAILED_RESPONSE_STATUS, ResponseCode.FAILED_RESPONSE_CODE, ResponseMessage.FAILED_CREATING_MESSAGE);	
 		}
