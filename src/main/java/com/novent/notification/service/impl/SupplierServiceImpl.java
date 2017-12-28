@@ -28,7 +28,7 @@ public class SupplierServiceImpl implements SupplierService{
 	public ResponseObject createSupplier(Supplier supplier) {
 		ResponseObject response = null;
 		if(!supplier.getPassword().equals("") && !supplier.getPassword().equals(null) && !supplier.getUserName().equals("") && !supplier.getUserName().equals(null)){
-			supplier.setIsLoggedIn(false);
+			supplier.setIsLoggedIn(true);
 			supplier.setType("supplier");
 			supplierDao.save(supplier);
 			SupplierSendNotifications.sendNotification(supplier.getId()+"", "Your account was successfully created", "Your account was successfully created");

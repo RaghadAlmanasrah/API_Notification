@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class SendNotifications {
+	static String app_id = "8d7a8872-6176-4aa4-bfd2-16dbff5fbd60";
+	static String authentication = "Basic ZjE5MDFkNTAtM2I0Zi00ODk0LWEzNmUtNWE4NjFlYzZkYzcx";
 
 	public static void sendNotification(final String userId, final String message, final String englishMessage) {
 
@@ -20,12 +22,12 @@ public class SendNotifications {
 			con.setDoInput(true);
 
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			con.setRequestProperty("Authorization", "Basic YTVhMjNlMmQtZDc0Mi00NTk1LWFkOTAtOThlYjRjYTY2NmJh");
+			con.setRequestProperty("Authorization", authentication);
 			con.setRequestMethod("POST");
 
 			System.out.println("------------------------------------------------------");
 
-			String strJsonBody = "{" + "\"app_id\":\"060b1a81-1928-4a1d-a4cc-aa531b8d75a3\","
+			String strJsonBody = "{" + "\"app_id\":\""+app_id+"\","
 
 					+ "\"filters\": [{\"field\": \"tag\", \"key\": \"User_ID\", \"relation\": \"=\", \"value\": \""
 					+ userId + "\"}],"
@@ -76,7 +78,7 @@ public class SendNotifications {
 			con.setDoInput(true);
 
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			con.setRequestProperty("Authorization", "Basic YTVhMjNlMmQtZDc0Mi00NTk1LWFkOTAtOThlYjRjYTY2NmJh");
+			con.setRequestProperty("Authorization", authentication);
 			con.setRequestMethod("POST");
 
 			System.out.println("------------------------------------------------------");
@@ -135,7 +137,7 @@ public class SendNotifications {
 			con.setDoInput(true);
 
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			con.setRequestProperty("Authorization", "Basic YTVhMjNlMmQtZDc0Mi00NTk1LWFkOTAtOThlYjRjYTY2NmJh");
+			con.setRequestProperty("Authorization", authentication);
 			con.setRequestMethod("POST");
 
 			System.out.println("------------------------------------------------------");

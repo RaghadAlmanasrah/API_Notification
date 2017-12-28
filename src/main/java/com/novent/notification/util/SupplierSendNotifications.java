@@ -6,6 +6,9 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class SupplierSendNotifications {
+	
+	static String app_id = "060b1a81-1928-4a1d-a4cc-aa531b8d75a3";
+	static String authentication = "Basic YTVhMjNlMmQtZDc0Mi00NTk1LWFkOTAtOThlYjRjYTY2NmJh";
 
 	public static void sendNotification(final String userId, final String message, final String englishMessage) {
 
@@ -20,12 +23,12 @@ public class SupplierSendNotifications {
 			con.setDoInput(true);
 
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			con.setRequestProperty("Authorization", "Basic ZjE5MDFkNTAtM2I0Zi00ODk0LWEzNmUtNWE4NjFlYzZkYzcx");
+			con.setRequestProperty("Authorization", authentication);
 			con.setRequestMethod("POST");
 
 			System.out.println("------------------------------------------------------");
 
-			String strJsonBody = "{" + "\"app_id\":\"8d7a8872-6176-4aa4-bfd2-16dbff5fbd60\","
+			String strJsonBody = "{" + "\"app_id\":\""+app_id+"\","
 
 					+ "\"filters\": [{\"field\": \"tag\", \"key\": \"User_ID\", \"relation\": \"=\", \"value\": \""
 					+ userId + "\"}],"
@@ -76,12 +79,12 @@ public class SupplierSendNotifications {
 			con.setDoInput(true);
 
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			con.setRequestProperty("Authorization", "Basic ZjE5MDFkNTAtM2I0Zi00ODk0LWEzNmUtNWE4NjFlYzZkYzcx");
+			con.setRequestProperty("Authorization", authentication);
 			con.setRequestMethod("POST");
 
 			System.out.println("------------------------------------------------------");
 
-			String strJsonBody = "{" + "\"app_id\": \"8d7a8872-6176-4aa4-bfd2-16dbff5fbd60\","
+			String strJsonBody = "{" + "\"app_id\": \""+app_id+"\","
 
 //					+ "\"filters\": [{\"field\": \"tag\", \"key\": \"User_ID\", \"relation\": \"=\", \"value\": \""
 //					+ "apple@notifications.com" + "\"}],"
@@ -135,12 +138,12 @@ public class SupplierSendNotifications {
 			con.setDoInput(true);
 
 			con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-			con.setRequestProperty("Authorization", "Basic ZjE5MDFkNTAtM2I0Zi00ODk0LWEzNmUtNWE4NjFlYzZkYzcx");
+			con.setRequestProperty("Authorization", authentication);
 			con.setRequestMethod("POST");
 
 			System.out.println("------------------------------------------------------");
 
-			String strJsonBody = "{" + "\"app_id\":\"8d7a8872-6176-4aa4-bfd2-16dbff5fbd60\","
+			String strJsonBody = "{" + "\"app_id\":\""+app_id+"\","
 
 //					+ "\"filters\": [{\"field\": \"tag\", \"key\": \"User_ID\", \"relation\": \"=\", \"value\": \""
 //					+ "apple@notifications.com" + "\"}],"
